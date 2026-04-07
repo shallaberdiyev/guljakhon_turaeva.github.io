@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Guljakhon Turaeva — MA Researcher | Area Studies & Media Discourse</title>
+  <meta name="description" content="MA Researcher in Area Studies at Shenzhen University. Specializing in Media Discourse, International Communication, BRI Media Framing, and Socio-political Analysis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sidebar: 260px;
+      --accent: #4a3728;
+      --accent-light: #7b5e4a;
+      --text: #1a1a1a;
+      --muted: #555;
+      --muted2: #888;
+      --border: #d4cfc8;
+      --bg: #e8e4dd;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text);
+      background: #e8e4dd;
+    }
+
+    a { color: var(--accent-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .layout {
+      display: flex;
+      min-height: 100vh;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #eef1f5;
+    }
+
+    aside {
+      width: var(--sidebar);
+      flex-shrink: 0;
+      padding: 3rem 1.6rem 3rem 1.8rem;
+      border-right: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .photo {
+      width: 210px;
+      height: 250px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      margin-bottom: 1.2rem;
+      border: 1px solid var(--border);
+    }
+
+    .photo-placeholder {
+      width: 210px;
+      height: 250px;
+      background: #ddd8d0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      border: 1px solid var(--border);
+      letter-spacing: -0.02em;
+    }
+
+    .sidebar-name {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 0.3rem;
+    }
+
+    .sidebar-role {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+    }
+
+    .sidebar-nav {
+      list-style: none;
+      margin-bottom: 1.4rem;
+    }
+
+    .sidebar-nav li { margin-bottom: 2px; }
+
+    .sidebar-nav a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      display: block;
+      padding: 2px 0;
+    }
+
+    .sidebar-nav a:hover { color: var(--accent-light); text-decoration: none; }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 1.4rem;
+    }
+
+    .social-btn {
+      font-size: 11.5px;
+      padding: 3px 9px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--accent);
+      background: #f0ede8;
+    }
+
+    .social-btn:hover { background: #e8e4dd; text-decoration: none; }
+
+    .sidebar-addr {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.65;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+
+    .sidebar-addr strong {
+      display: block;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    main {
+      flex: 1;
+      padding: 3rem 3.2rem;
+    }
+
+    .sec {
+      margin-bottom: 2.6rem;
+      padding-bottom: 2.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sec:last-child { border-bottom: none; }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 1rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .about-text { font-size: 14px; color: var(--muted); line-height: 1.85; }
+    .about-text p + p { margin-top: 0.8rem; }
+
+    .interests-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .interests-list li {
+      font-size: 13.5px;
+      color: var(--muted);
+      padding-left: 14px;
+      position: relative;
+    }
+    .interests-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent-light);
+      font-size: 10px;
+      top: 4px;
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 0 1.2rem;
+      margin-bottom: 1.1rem;
+      padding-bottom: 1.1rem;
+      border-bottom: 1px solid #e0ddd8;
+    }
+    .entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .entry-period { font-size: 12px; color: var(--muted2); padding-top: 2px; line-height: 1.5; }
+    .entry-title { font-size: 14.5px; font-weight: 500; color: var(--text); margin-bottom: 1px; }
+    .entry-org { font-size: 14px; color: var(--accent-light); margin-bottom: 3px; }
+    .entry-desc { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+    .entry-meta { font-size: 13px; color: var(--muted2); font-style: italic; margin-top: 2px; }
+
+    .award-list { list-style: none; }
+    .award-list li {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 5px 0 5px 14px;
+      border-bottom: 1px solid #e0ddd8;
+      position: relative;
+    }
+    .award-list li:last-child { border-bottom: none; }
+    .award-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent-light);
+      font-size: 10px;
+      top: 8px;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 8px;
+      align-items: start;
+      margin-bottom: 8px;
+    }
+    .skill-row:last-child { margin-bottom: 0; }
+    .skill-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted2);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding-top: 3px;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .stag {
+      font-size: 12px;
+      padding: 2px 9px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--muted);
+      background: #f0ede8;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 11.5px;
+      color: var(--muted2);
+      padding: 1.5rem 2rem;
+      border-top: 1px solid var(--border);
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #eef1f5;
+    }
+    footer a { color: var(--muted2); }
+
+    @media (max-width: 700px) {
+      .layout { flex-direction: column; }
+      aside { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 1.5rem; }
+      .photo, .photo-placeholder { width: 130px; height: 160px; font-size: 2rem; }
+      main { padding: 2rem 1.5rem; }
+      .entry { grid-template-columns: 1fr; }
+      .entry-period { margin-bottom: 2px; }
+      .skill-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <aside>
+    <div class="photo-placeholder">GT</div>
+    <div class="sidebar-name">Guljakhon Turaeva</div>
+    <div class="sidebar-role">
+      MA Researcher<br>
+      Area Studies<br>
+      School of Foreign Languages<br>
+      Shenzhen University, China<br><br>
+      <span style="color:var(--accent); font-weight:500;">El-Yurt Umidi Scholar</span>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="social-row">
+      <a href="https://www.researchgate.net/profile/Guljakhon" class="social-btn" target="_blank">ResearchGate</a>
+      <a href="mailto:guljahonturayeva8@gmail.com" class="social-btn">Email</a>
+    </div>
+
+    <div class="sidebar-addr">
+      <strong>Contact</strong>
+      School of Foreign Languages<br>
+      Shenzhen University<br>
+      Nanshan District, Shenzhen<br>
+      Guangdong, China 518060<br><br>
+      guljahonturayeva8@gmail.com<br>
+      +86 131 488 77 864<br>
+      +998 95 707 21 97
+    </div>
+  </aside>
+
+  <main>
+
+    <div class="sec" id="about">
+      <h2>About</h2>
+      <div class="about-text">
+        <p>I am a Master's researcher in Area Studies at the School of Foreign Languages, <a href="https://www.szu.edu.cn/en/" target="_blank">Shenzhen University</a>. My research centers on media discourse, international communication, BRI media framing, and socio-political analysis of Central Asia, with a particular focus on Uzbekistan's representation in global media.</p>
+        <p>Prior to my MA, I served as an Assistant to the Dean of the Faculty of Foreign Philology at Termez State University and as a teacher of English technical terminology at secondary schools in Tashkent. I hold a BA in English and German Philology (Translation Theory and Practice) from the National University of Uzbekistan (CGPA 3.60/4.0).</p>
+        <p>I am a recipient of the El-Yurt Umidi Foundation Scholarship (2023) and the Shenzhen Universiade International Scholarship (2025-2026).</p>
+      </div>
+    </div>
+
+    <div class="sec" id="research">
+      <h2>Research Interests</h2>
+      <ul class="interests-list">
+        <li>Media discourse analysis - framing, representation, and narrative construction</li>
+        <li>BRI (Belt and Road Initiative) media framing and Uzbekistan coverage in international press</li>
+        <li>International communication and global governance</li>
+        <li>Socio-political analysis of Central Asian region</li>
+        <li>Area studies methodology - comparative and interdisciplinary approaches</li>
+        <li>Corpus linguistics and computational approaches to discourse analysis</li>
+        <li>Child language acquisition and applied linguistics</li>
+        <li>English for technology and technical terminology in education</li>
+      </ul>
+    </div>
+
+    <div class="sec" id="education">
+      <h2>Education</h2>
+
+      <div class="entry">
+        <div class="entry-period">2024 –<br>Present</div>
+        <div class="entry-body">
+          <div class="entry-title">MA - Area Studies</div>
+          <div class="entry-org">Shenzhen University, China</div>
+          <div class="entry-desc">School of Foreign Languages. Major: Area Studies, Media Discourse, International Communication and Socio-political Analysis, Global Governance.</div>
+          <div class="entry-meta">CGPA 3.9 / 4.0 · El-Yurt Umidi Scholar · Universiade International Scholar</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-period">2017 – 2021</div>
+        <div class="entry-body">
+          <div class="entry-title">BA - English and German Philology</div>
+          <div class="entry-org">National University of Uzbekistan named after Mirzo Ulugbek, Tashkent</div>
+          <div class="entry-desc">Major: Translation Theory and Practice (English for Technology). Coursework: Discourse Analysis, Rhetoric, Research Methods, English Stylistics, Computer-related Linguistics, English for Computer Technology.</div>
+          <div class="entry-meta">CGPA 3.60 / 4.0 · Supervisor: Dr. Iroda Juraeva</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sec" id="experience">
+      <h2>Research & Professional Experience</h2>
+
+      <div class="entry">
+        <div class="entry-period">2018 – 2019</div>
+        <div class="entry-body">
+          <div class="entry-title">Research Assistant</div>
+          <div class="entry-org">National University of Uzbekistan, Tashkent</div>
+          <div class="entry-desc">Research on "Disquisition and application of foreign language terminology used in modern information technologies." Assisted in compiling and analysing English technical terminology for academic purposes.</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-period">2020 – 2022</div>
+        <div class="entry-body">
+          <div class="entry-title">Assistant to the Dean & Teacher of English Technical Terminology</div>
+          <div class="entry-org">Termez State University & School No. 20, Tashkent region, Uzbekistan</div>
+          <div class="entry-desc">Served as Assistant to the Dean of the Faculty of Foreign Philology. Taught English technical terminology and IELTS preparation to secondary school students. Designed curriculum bridging English language skills with computer programming concepts and modern technology vocabulary.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sec" id="awards">
+      <h2>Awards & Scholarships</h2>
+      <ul class="award-list">
+        <li>El-Yurt Umidi Foundation Scholarship for Overseas Master's Study - 2023</li>
+        <li>Shenzhen Universiade International Scholarship (RMB 35,000) - Academic Year 2025-2026</li>
+        <li>HSK Level 3 Mock Test Score: 287/300 (Listening 90, Reading 97, Writing 100) - February 2026</li>
+        <li>Certificate of Honor for Volunteer Service - New International Students Orientation, Shenzhen University, March 2026</li>
+        <li>Certificate of Honor for Volunteer Service - Shenzhen University Sports Meeting, December 2025</li>
+        <li>Certificate of Honor - 8th International Cultural Festival, Uzbekistan Booth, Shenzhen University, April 2025</li>
+        <li>Certificate of Honor - Individual 100m Race & Mixed Relay (4x200m), Shenzhen University Games, December 2024</li>
+        <li>Certificate of Honor for Volunteer Service - International Student Registration, Shenzhen University, February 2025</li>
+        <li>Certificate of Honor - 7th International Cultural Festival, Uzbekistan Booth, Shenzhen University, April 2024</li>
+      </ul>
+    </div>
+
+    <div class="sec" id="skills">
+      <h2>Skills</h2>
+      <div class="skill-row">
+        <div class="skill-label">Languages</div>
+        <div class="skill-tags">
+          <span class="stag">Uzbek - Native</span>
+          <span class="stag">English - C2 (Speaking)</span>
+          <span class="stag">Russian - B2</span>
+          <span class="stag">Chinese - B2 (Listening)</span>
+          <span class="stag">German - B1</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label">Research</div>
+        <div class="skill-tags">
+          <span class="stag">Discourse Analysis</span>
+          <span class="stag">Media Framing</span>
+          <span class="stag">Qualitative Research</span>
+          <span class="stag">Corpus Linguistics</span>
+          <span class="stag">Academic Writing</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label">Technical</div>
+        <div class="skill-tags">
+          <span class="stag">Python (basic)</span>
+          <span class="stag">MS Office</span>
+          <span class="stag">AutoCAD</span>
+          <span class="stag">Photoshop</span>
+          <span class="stag">Windows / Ubuntu</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec" id="contact">
+      <h2>Contact</h2>
+      <div style="font-size:13.5px; color:var(--muted); line-height:2.1;">
+        <strong style="color:var(--text);">Email:</strong>
+        <a href="mailto:guljahonturayeva8@gmail.com">guljahonturayeva8@gmail.com</a><br>
+        <strong style="color:var(--text);">Phone:</strong> +86 131 488 77 864 (China) · +998 95 707 21 97 (Uzbekistan)<br>
+        <strong style="color:var(--text);">Skype:</strong> G.Turaeva<br>
+        <strong style="color:var(--text);">Address:</strong> School of Foreign Languages, Shenzhen University, Nanshan District, Shenzhen, Guangdong, China 518060<br>
+        <strong style="color:var(--text);">Open to:</strong> Research collaboration · Academic positions · Lecturer / Instructor roles · Translation & Communication projects
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  Guljakhon Turaeva · Shenzhen University ·
+  <a href="https://www.researchgate.net/profile/Guljakhon" target="_blank">ResearchGate</a> ·
+  Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
+</footer>
+
+</body>
+</html>
